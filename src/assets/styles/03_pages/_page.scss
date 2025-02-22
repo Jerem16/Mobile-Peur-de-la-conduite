@@ -1,0 +1,34 @@
+.section {
+    width: 100%;
+    padding: 2rem;
+    &:first-child {
+        div {
+        }
+    }
+    .fixed-menu {
+        height: calc(60px + 2rem);
+        width: 100vw;
+        transform-origin: top;
+        transform: scaleY(1);
+        transition: all 375ms ease-in-out;
+    }
+    h2 {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    &.section {
+        height: calc(100vh);
+        background: rgb(172, 212, 172);
+    }
+    &.slider-bg {
+        background: rgb(227, 195, 195);
+    }
+    &.about-bg {
+        background: rgb(176, 176, 214);
+    }
+}

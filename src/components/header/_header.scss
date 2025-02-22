@@ -1,0 +1,124 @@
+header {
+    background: linear-gradient(
+        180deg,
+        rgba(245, 245, 245, 1) 0%,
+        rgba(245, 245, 245, 0) 95%,
+        rgba(245, 245, 245, 0) 100%
+    );
+    width: 100vw;
+    position: fixed;
+    top: -1px;
+    z-index: 100;
+}
+.header {
+    padding: 0 1rem;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    gap: clamp(1rem, 2vw, 4rem);
+    width: 100%;
+    height: 50px;
+    margin-top: 0.25rem;
+    nav {
+        top: 0;
+        button.menu {
+            background: transparent;
+            color: $dark-blue;
+            filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2));
+            position: relative;
+            z-index: 1000;
+        }
+        .absolute {
+            left: calc(-100vw + 56px);
+            top: -8px;
+            width: 100vw;
+            height: 100vh;
+            padding: 54px 1.5rem;
+        }
+        .content-menu {
+            width: 100%;
+            height: fit-content;
+            margin-top: 1.5rem;
+        }
+    }
+}
+.active {
+    font-weight: bold;
+    color: #007bff; // Bleu pour indiquer l'élément actif
+}
+
+.logo-link {
+    width: 50px;
+    height: 50px;
+}
+
+.logo {
+    margin-top: 0.25rem;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    @include menuShadow(rgba(0, 0, 0, 0.5));
+    border-radius: 50%;
+    background: $white;
+
+    cursor: pointer;
+    .mouth,
+    .eyes {
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: transform 0.5s ease-in-out;
+    }
+    .logo-fp {
+        fill: $white;
+        @include dropShadow(rgba(0, 0, 0, 0.35));
+    }
+    .logo-circle,
+    .logo-bg {
+        filter: blur(0.1px);
+    }
+    &:hover {
+        @include dropShadow(rgba(0, 0, 0, 0.25));
+        .logo-bg {
+            @include dropShadow(rgba(0, 0, 0, 0.05));
+            border-radius: 50% !important;
+        }
+        .logo-circle {
+            display: none;
+        }
+        .eyes {
+            animation: eyeAnimation 0.5s 0.25s;
+            transform: rotate(1deg);
+            transform-origin: center;
+        }
+        .mouth {
+            transform: rotate(-7deg);
+            transform-origin: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .logo-fp {
+            display: none;
+        }
+    }
+    @keyframes eyeAnimation {
+        0% {
+            d: path(
+                "M64.2 47.8c.2 4.4 6.8 3.5 9.3 3.2 4.9-.9 4.7-8.4-.2-8s-9.1 1.4-9.1 4.8z"
+            );
+        }
+        50% {
+            d: path(
+                "M64.2 47.8c.2 1.4 6.8 1.5 9.3 1.2 4.9-.3 4.7-1.4-.2-1s-9.1 1.4-9.1 0.8z"
+            );
+        }
+        100% {
+            d: path(
+                "M64.2 47.8c.2 4.4 6.8 3.5 9.3 3.2 4.9-.9 4.7-8.4-.2-8s-9.1 1.4-9.1 4.8z"
+            );
+        }
+    }
+}
