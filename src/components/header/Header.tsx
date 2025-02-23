@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Nav from "./Nav";
@@ -9,7 +9,6 @@ import { MenuItem, menuItems } from "../../assets/data/menuItems";
 import { updateMenuClasses } from "../../utils/updateMenuUtils";
 import { handleScrollClick, handleNavClick } from "../../utils/fnScrollUtils";
 import { useInitialScroll } from "../../utils/scrollUtils";
-import useResize from "./utils/useResize";
 
 interface NavProps {
     menuItems: MenuItem[];
@@ -30,14 +29,6 @@ const Header: React.FC<NavProps> = () => {
 
     useInitialScroll(pathname);
 
-    const [tabletMain, setTabletMain] = useState(false);
-    const [openMainButton, setOpenMainButton] = useState(false);
-    const [openButton, setOpenButton] = useState(false);
-    const [bigMenu, setBigMenu] = useState(false);
-
-    useResize(setTabletMain, setOpenMainButton, setOpenButton, setBigMenu);
-
-    // Wrapper pour adapter `handleNavClick`
     const handleNavigationClick = (path: string) => {
         handleNavClick(path, currentRoute, updateRoute, handleScrollClick);
     };
@@ -63,11 +54,6 @@ const Header: React.FC<NavProps> = () => {
             <Nav
                 menuItems={updatedMenuItems}
                 onNavigationClick={handleNavigationClick}
-                tabletMain={tabletMain} // Gestion de la vue tablette
-                openMainButton={openMainButton} // Gestion de la vue Desktop
-                setOpenMainButton={setOpenMainButton}
-                openButton={openButton}
-                bigMenu={bigMenu} // Gestion de la vue Desktop large
             />
         </div>
     );

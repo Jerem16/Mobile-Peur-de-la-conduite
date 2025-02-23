@@ -118,7 +118,7 @@ export default function RootLayout({
                                         </div>
                                     </header>
                                     <main>{children}</main>
-                                    {/* <Footer /> */}
+                                    <Footer />
                                 </Suspense>
                             </DrivingProvider>
                         </SearchProvider>

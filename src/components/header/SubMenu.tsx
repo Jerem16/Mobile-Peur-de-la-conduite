@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { MenuItem } from "../../../assets/data/menuItems";
-import { useNavigation } from "../../../utils/context/NavigationContext";
+import { MenuItem } from "../../assets/data/menuItems";
+import { useNavigation } from "../../utils/context/NavigationContext";
 
 interface SubMenuProps {
     menuItem: MenuItem;
@@ -15,14 +15,15 @@ const SubMenu: React.FC<SubMenuProps> = ({
     isOpen,
     onSubItemClick,
 }) => {
-    const { setOpenSubMenu } = useNavigation();
+    const { closeHamburgerMenu } = useNavigation();
     const handleSubItemClick = (
         path: string,
         e: React.MouseEvent | React.KeyboardEvent
     ) => {
+        e.stopPropagation();
         e.preventDefault(); // Empêche la navigation par défaut
         onSubItemClick(path); // Appelle la fonction pour gérer le clic
-        setOpenSubMenu(null);
+        closeHamburgerMenu(800);
     };
 
     const handleKeyDown = (
@@ -33,16 +34,11 @@ const SubMenu: React.FC<SubMenuProps> = ({
             e.preventDefault(); // Empêche l'action par défaut de la touche
             onSubItemClick(path); // Ouvre ou effectue une action pour le sous-menu
         }
-        // else if (e.key === "Escape") {
-        //     e.preventDefault(); // Empêcher le comportement par défaut
-        //     setOpenSubMenu(null); // Fermer le menu si Escape est pressé
-        // }
     };
 
     if (!menuItem.subItems || menuItem.subItems.length === 0) return null;
 
     return (
-        // isOpen && (
         <div className={`submenu ${isOpen ? "open" : ""}`}>
             <div className="submenu_group">
                 {menuItem.subItems.map((subItem) => {
@@ -63,7 +59,6 @@ const SubMenu: React.FC<SubMenuProps> = ({
                 })}
             </div>
         </div>
-        // )
     );
 };
 

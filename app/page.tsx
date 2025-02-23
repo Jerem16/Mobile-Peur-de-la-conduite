@@ -14,21 +14,20 @@ export default function Home() {
         <ScrollSectionsWrapper>
             <section className="section slider-bg" id="slider">
                 <SliderProvider>
-                    <></>
-                    {/* <Slider /> */}
+                    <Slider />
                 </SliderProvider>
             </section>
             <section className="section about-bg" id="about">
                 <div className="fixed-menu"></div>
-                {/* <About /> */}
+                <About />
             </section>
             <section className="section" id="services">
                 <div className="fixed-menu"></div>
-                {/* <Services /> */}
+                <Services />
             </section>
             <section className="section" id="contact">
                 <div className="fixed-menu"></div>
-                {/* <ContactHome /> */}
+                <ContactHome />
             </section>
         </ScrollSectionsWrapper>
     );

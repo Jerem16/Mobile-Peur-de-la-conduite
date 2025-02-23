@@ -16,6 +16,9 @@ interface NavigationContextType {
     showNavLinks: boolean;
     setShowNavLinks: (showNavLinks: boolean) => void;
     resetDisplayStyles: () => void;
+    hamburgerMenuIsOpen: boolean;
+    openHamburgerMenu: () => void;
+    closeHamburgerMenu: (delay?: number) => void;
 }
 
 const NavigationContext = createContext<NavigationContextType | null>(null);
@@ -28,10 +31,23 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({
     const [currentRoute, setCurrentRoute] = useState(pathname || "/");
     const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
     const [showNavLinks, setShowNavLinks] = useState<boolean>(true);
+    const [hamburgerMenuIsOpen, sethamburgerMenuIsOpen] = useState(false);
 
-    // Fonction pour réinitialiser l'affichage des sous-menus
+    // Ouvre le menu
+    const openHamburgerMenu = useCallback(() => {
+        sethamburgerMenuIsOpen(true);
+    }, []);
+
+    // Ferme le menu avec un délai personnalisé
+    const closeHamburgerMenu = useCallback((delay: number = 0) => {
+        setTimeout(() => {
+            sethamburgerMenuIsOpen(false);
+        }, delay);
+    }, []);
+
+    // Réinitialise les styles et ferme les sous-menus
     const resetDisplayStyles = useCallback(() => {
-        setOpenSubMenu(null); // Ferme tous les sous-menus
+        setOpenSubMenu(null);
     }, []);
 
     useEffect(() => {
@@ -55,6 +71,9 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({
             resetDisplayStyles,
             showNavLinks,
             setShowNavLinks,
+            hamburgerMenuIsOpen,
+            openHamburgerMenu,
+            closeHamburgerMenu,
         }),
         [
             currentRoute,
@@ -62,6 +81,9 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({
             openSubMenu,
             resetDisplayStyles,
             showNavLinks,
+            hamburgerMenuIsOpen,
+            openHamburgerMenu,
+            closeHamburgerMenu,
         ]
     );
 
