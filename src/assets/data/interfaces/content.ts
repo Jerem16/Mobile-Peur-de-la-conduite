@@ -20,7 +20,13 @@ export interface AboutContent {
 export interface SliderContent {
     h2: string;
     h2bold: string;
+    h2bold2?: string;
+    h2bold3?: string;
     description: string;
+    descriptionBold?: string;
+    descriptionBoldEnd?: string;
+    description2?: string;
+    descriptionBold2?: string;
     ref: string;
     go: string;
     slideRef: number;

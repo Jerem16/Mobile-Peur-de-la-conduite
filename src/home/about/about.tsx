@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { aboutContent } from "../../assets/data/content/about";
-
+import ButtonLink from "../../components/button/ButtonLink";
+import { menuItems } from "../../assets/data/menuItems";
 const About = () => {
     return (
         <div className="about content-wrapper flx-c">
@@ -13,7 +14,6 @@ const About = () => {
                     height="540"
                 />
             </div>
-            <div className="ab-card_bg"></div>
             {aboutContent.map((content, index) => (
                 <div className="segment" key={index + "ab-card"}>
                     <div className="card_header flx-c">
@@ -27,16 +27,23 @@ const About = () => {
                             alt={`Avatar de ${content.cardIdentity.firstName}`}
                             width={225}
                             height={225}
-                            // loading="lazy"
                             priority={true}
                         />
                         <p>{content.cardIdentity.profession}</p>
                     </div>
                     <div className="card_content">
                         {content.cardContent.description.map((line, i) => (
-                            <p key={i + "ab"}>{line}</p>
+                            <p
+                                key={i + "ab"}
+                                dangerouslySetInnerHTML={{ __html: line }}
+                            />
                         ))}
                     </div>
+                    {menuItems.mainLink?.[4] && (
+                        <ButtonLink href={menuItems.mainLink[4].path}>
+                            Contactez-moi
+                        </ButtonLink>
+                    )}
                 </div>
             ))}
         </div>

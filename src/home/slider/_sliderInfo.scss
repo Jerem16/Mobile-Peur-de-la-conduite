@@ -1,66 +1,45 @@
 #slider {
     position: relative;
+    min-height: 100dvh;
+}
+.info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+}
+.sld-info_ctn {
+    width: calc(100% - 0px) !important;
+    height: fit-content;
+    flex-shrink: 0;
+    position: relative;
+    top: -13rem;
+    z-index: 1;
+    display: inline-flex;
+    flex-flow: column-reverse nowrap;
+    align-items: flex-end;
+    gap: 0.5rem;
+    min-height: 135px;
 
-    &.active-section {
-        .sld-info_ctn {
-            transform: translateX(0);
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
+    p {
+        text-align: right;
+        padding: 0 2rem 0.5rem 2rem;
+        width: 100%;
+        @include bannerDescribeBold;
     }
-    .sld-info_ctn {
-        transform: translateX(100%);
-        opacity: 0;
-        width: 972px;
-        height: 72px;
-        flex-shrink: 0;
-        border-radius: 90px;
-        background: $white;
-        margin: 0;
-        display: inline-flex;
-        align-items: center;
-        margin-top: 4rem;
-        position: relative;
-        float: none;
-        left: calc(1440px - 972px);
-        z-index: 1;
-        bottom: 0px;
-        // border: 1px solid #000;
-
-        &::after {
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        p {
-            margin: 0 0 0 84px;
-            width: 720px;
-            width: $width-card_content;
-            @include bannerDescribeBold;
-        }
-
-        .icon-position {
-            width: 135px;
+    .icon-position {
+        width: 135px;
+        height: 135px;
+        z-index: 1000;
+        img {
+            position: absolute;
             width: 119px;
             height: 135px;
-            position: absolute;
-            right: -16px;
-            align-self: flex-end;
-            z-index: 1000;
-            // display: none;
-            img {
-                position: absolute;
-                width: 135px;
-                width: 119px;
-                height: 135px;
-                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-            }
-        }
-    }
-}
-@media (max-width: 1440px) {
-    #slider {
-        .sld-info_ctn {
-            left: calc(100vw - 972px + 16px);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         }
     }
 }

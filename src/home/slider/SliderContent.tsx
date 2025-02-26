@@ -3,6 +3,8 @@ import { sliderContent } from "../../assets/data/content/slider";
 import Space from "../../utils/Space";
 import SliderCTA from "./SliderCTA";
 import SliderArrow from "./SliderArrow";
+// import SliderInfoLocation from "./SliderInfoLocation";
+// import SliderIconLocation from "./SliderIconLocation";
 import SliderInfo from "./SliderInfo";
 interface SliderContentProps {
     getClass: (index: number) => string;
@@ -28,17 +30,39 @@ const SliderContent: React.FC<SliderContentProps> = ({
                                     {slide.h2}
                                     <Space />
                                     <span className="bold">{slide.h2bold}</span>
+                                    <span className="bold">
+                                        {slide.h2bold2}
+                                    </span>
+                                    <span className="bold">
+                                        {slide.h2bold3}
+                                    </span>
                                 </h2>
                             </div>
                             <div className="banner-description">
-                                <p>{slide.description}</p>
+                                <p>
+                                    <span className="bold">
+                                        {slide.descriptionBold}
+                                    </span>
+                                    {slide.description}
+                                    <span className="bold">
+                                        {slide.descriptionBoldEnd}
+                                    </span>
+                                </p>
+                                <p>
+                                    {slide.description2}
+                                    <span className="bold">
+                                        {slide.descriptionBold2}
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 ))}
                 <SliderArrow prevSlide={prevSlide} nextSlide={nextSlide} />
-                <SliderCTA />
-                <SliderInfo />
+                <div className="flx-c info">
+                    <SliderCTA />
+                    <SliderInfo />
+                </div>
             </div>
         </div>
     );

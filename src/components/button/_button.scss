@@ -15,7 +15,7 @@
     will-change: transform, box-shadow;
 
     @include buttonText;
-
+    font-size: 1.25rem;
     a {
         @include buttonText;
     }

@@ -53,9 +53,12 @@ header {
         width: 100vw;
         height: 100dvh;
         padding: 54px 1.5rem;
-        background: $white;
+
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+
         display: flex;
-        // flex-direction: column;
         transform: translateX(-100%);
         transition: transform 0.5s ease-in-out;
     }
@@ -70,25 +73,24 @@ header {
     }
 }
 
-nav {
-    animation: 0.9s ease-in-out forwards opacityAnimationDelay;
-}
 .main-nav {
     display: inline-flex;
     align-items: flex-start;
     flex-flow: column;
-    border-radius: 100px;
-    background: $white;
+    border-radius: 1.5rem;
+
+    background-color: rgba(255, 255, 255, 0.35);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2));
+
     transition: all 0.45s ease, color 0.3s ease;
     z-index: 1000;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
     gap: 1rem;
     width: 100%;
     height: fit-content;
-    &:hover,
-    &:focus {
-        transform: scale(1);
-    }
+
     .group_link-submenu {
         position: relative;
         min-width: 20px;
@@ -198,24 +200,10 @@ input.show-link {
     @include navLink;
     margin-left: 10px;
 }
-// nav .group_link-submenu:last-of-type .nav-link:last-of-type {
-//     // margin-right: 0.25rem;
-// }
-// .group_link-submenu .nav-link.hidden {
-//     opacity: 0;
-//     width: 0px;
-//     margin: 0 !important;
-//     visibility: hidden;
-//     max-height: 0;
-//     transform: translateY(-10px);
-//     animation: opacityWidthAnimationIn 0.3s ease-in-out backwards;
-//     transition: all 0.3s ease-in-out;
-// }
 
 .group_link-submenu .nav-link.show-link {
     opacity: 1;
     visibility: visible;
-    // max-height: 52px;
     transform: translateY(0);
     animation: opacityWidthAnimationIn 0.3s ease-in-out forwards;
     transition: all 0.3s ease-in-out;
@@ -231,19 +219,12 @@ option.nav-link {
     text-transform: capitalize;
 }
 
-nav .group_link-submenu:hover .submenu,
 nav .group_link-submenu:focus .submenu,
 nav .group_link-submenu:focus-visible .submenu,
 .submenu.open {
     display: block;
     opacity: 1;
 }
-// nav .nav-circle:hover .submenu,
-// nav .nav-circle:focus .submenu,
-// nav .nav-circle .submenu.open,
-// nav .nav-padding .submenu:not(.open) {
-//     display: none;
-// }
 
 .submenu_group .nav-link {
     position: relative;
@@ -280,7 +261,6 @@ nav .group_link-submenu:focus-visible .submenu,
     transform-origin: right;
 }
 
-.submenu_group .nav-link:hover,
 .submenu_group .nav-link:focus,
 .submenu_group .nav-link:focus-visible {
     color: $white !important;
@@ -289,39 +269,12 @@ nav .group_link-submenu:focus-visible .submenu,
     @include smoothTransition(background, box-shadow);
 }
 
-.submenu_group .nav-link:hover::before,
-.submenu_group .nav-link:hover::after {
-    transform: scaleX(1);
-}
-
 .icon-color,
 .nav-link {
     fill: $primary-black;
     color: $primary-black;
 }
-// .group_link-submenu:hover .submenu.open,
-// .group_link-submenu:hover .head-link .nav-link,
-// .group_link-submenu:hover .head-link .icon-color,
-// .main-nav:hover .group_link-submenu .head-link:hover .icon-color,
-// .main-nav:hover .group_link-submenu .head-link:hover .nav-link,
-// .nav-link:hover,
-// .group_link-submenu:hover,
-// .submenu_group .nav-link:hover {
-//     fill: $primary-orange;
-//     color: $primary-orange;
-//     @include smoothTransition(fill, color, transform);
-//     z-index: 20;
-// }
-// .main-nav:hover .group_link-submenu .head-link:hover {
-//     transition: all 0.7s ease;
-// }
-.group_link-submenu:hover .head-link.active .nav-link,
-.group_link-submenu:hover .head-link.active .nav-icon .icon-color,
-.main-nav:hover .group_link-submenu .head-link.active:hover,
-.submenu_group:hover .nav-link.active:hover,
-.main-nav:hover .group_link-submenu .head-link.active:hover .icon-color,
-.main-nav:hover .group_link-submenu .head-link.active:hover .nav-link,
-.submenu_group .nav-link:hover,
+
 .head-link.active .icon-color,
 .head-link.active .nav-icon,
 .head-link.active .nav-link,

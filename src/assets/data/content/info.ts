@@ -3,7 +3,7 @@ import { SliderInfo } from "../interfaces/content";
 
 export const sliderInfo: SliderInfo[] = [
     {
-        info: "Disponible sur Le Havre et dans un rayon de 50 km !",
+        info: "Disponible dans un rayon de 50 km autour du Havre",
     },
     {
         info: "Diagnostic",

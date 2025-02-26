@@ -19,37 +19,32 @@
 .sld-container {
     height: calc(100vh);
     max-height: 630px;
-    width: 100%;
-    max-width: 1920px;
+    width: 100vw;
     margin: 0 auto;
     z-index: 2;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    .sld-road,
     .sld-flag,
     .sld-road-med,
     .slider-number {
-        top: -10px;
         padding: 0 35px 0 0;
         max-width: 1656px;
         height: auto;
         position: absolute;
+        width: calc(100% + 351.25px);
+        top: 156px;
+        padding-left: 20px;
         z-index: 2;
         margin: 0 auto;
         filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
     }
-    .sld-road-med {
-        display: none;
-    }
+
     .sld-flag {
         max-width: inherit;
         width: 1685px;
         padding-right: 45px;
-        // max-height: 630px;
         top: -20px;
-        // height: auto;
-        // object-fit: cover;
         filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
     }
     .slider-number {
