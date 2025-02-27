@@ -7,22 +7,8 @@ interface SliderArrowProps {
 }
 
 const SliderArrow: React.FC<SliderArrowProps> = ({ nextSlide, prevSlide }) => {
-    const handleKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === "ArrowLeft") {
-            prevSlide(e);
-        } else if (e.key === "ArrowRight") {
-            nextSlide(e);
-        }
-    };
-
     return (
-        <span
-            className="banner-arrow flx-c"
-            tabIndex={0} // Rendre focusable
-            onKeyDown={handleKeyDown}
-            role="region"
-            aria-label="Controlle des fleches navigation slider"
-        >
+        <span className="banner-arrow flx-c">
             <Arrow
                 className="slider-arrow left-arrow flx-c"
                 ariaLabel="Aller à la diapositive précédente"

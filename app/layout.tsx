@@ -10,25 +10,28 @@ import Footer from "../src/components/footer/footer"
 import "./globals.css";
 import "../src/assets/styles/main.scss";
 
-export const RobotoFlex = localFont({
-    src: "/fonts/RobotoFlex.woff2",
-    variable: "--RobotoFlex",
-    weight: "100 900",
-    display: "swap", 
-});
+
 
 const Montserrat = localFont({
     src: "./fonts/Montserrat.woff2",
     variable: "--montserrat",
     weight: "100 900",
-    display: "swap", 
+    display: "swap",
+    preload: true
 });
-
+export const RobotoFlex = localFont({
+    src: "/fonts/RobotoFlex.woff2",
+    variable: "--RobotoFlex",
+    weight: "100 900",
+    display: "swap", 
+    preload: false
+});
 const Nunito = localFont({
     src: "./fonts/Nunito.woff2",
     variable: "--nunito",
     weight: "100 900",
     display: "swap", 
+    preload: false
 });
 
 export const metadata: Metadata = {
@@ -104,7 +107,7 @@ export default function RootLayout({
     return (
         <html lang="fr-FR">
             <body
-                className={`${RobotoFlex.variable} ${Montserrat.variable} ${Nunito.variable}`} id="top"
+                className={`${Montserrat.variable} ${RobotoFlex.variable} ${Nunito.variable}`} id="top"
             >
                 <ScrollProvider>
                     <ScrollSectionsWrapper>

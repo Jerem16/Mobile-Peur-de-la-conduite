@@ -12,22 +12,21 @@
     margin: auto;
 }
 .sld-info_ctn {
-    width: calc(100% - 0px) !important;
-    height: fit-content;
-    flex-shrink: 0;
+    height: 197px;
     position: relative;
     top: -13rem;
+    right: 0;
     z-index: 1;
     display: inline-flex;
-    flex-flow: column-reverse nowrap;
+    flex-flow: column nowrap;
     align-items: flex-end;
-    gap: 0.5rem;
+    padding: 0 1rem;
     min-height: 135px;
 
     p {
         text-align: right;
-        padding: 0 2rem 0.5rem 2rem;
-        width: 100%;
+        padding: 0 2rem 0.5rem 0rem;
+        width: 380px;
         @include bannerDescribeBold;
     }
     .icon-position {
