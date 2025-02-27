@@ -1,29 +1,23 @@
-"use client";
-
-import React, { useContext } from "react";
+import React from "react";
 import SunBG from "./SunBG";
 import SliderRoad from "./SliderRoad";
 import SliderContent from "./SliderContent";
-import { SliderContext } from "../../utils/context/slider/SliderContext";
-
+import SliderCTA from "./SliderCTA";
+import SliderInfo from "./SliderInfo";
 const Slider = () => {
-    const sliderContext = useContext(SliderContext);
-
-    if (!sliderContext) {
-        throw new Error("Slider must be used within a SliderProvider");
-    }
-
-    const { currentSlide, nextSlide, prevSlide, getClass } = sliderContext;
-
     return (
         <>
             <SunBG />
-            <SliderRoad currentSlide={currentSlide} />
-            <SliderContent
-                nextSlide={nextSlide}
-                prevSlide={prevSlide}
-                getClass={getClass}
-            />
+            <SliderRoad />
+            <div className="slider">
+                <div className="content-wrapper">
+                    <SliderContent />
+                    <div className="flx-c info">
+                        <SliderCTA />
+                        <SliderInfo />
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

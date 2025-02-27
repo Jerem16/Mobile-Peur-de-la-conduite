@@ -31,11 +31,16 @@
         max-width: 1656px;
         height: auto;
         position: absolute;
-        width: calc(100% + 351.25px);
-        top: calc(260px - 25vw);
-        padding-left: 20px;
+        width: calc(100% + 340px);
+        top: calc(60px - 12vw);
+        padding-left: 24px;
         z-index: 2;
         margin: 0 auto;
-        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+
+        svg {
+            object-fit: contain;
+            width: 100%;
+            filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
     }
 }
