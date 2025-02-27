@@ -66,7 +66,6 @@ ol {
 
 .content-wrapper {
     margin: 0 auto;
-    max-width: 1440px;
     width: auto;
     position: relative;
 }
@@ -107,43 +106,29 @@ ol {
     column-gap: calc(42px);
     position: relative;
     margin: 0 auto;
-
     .card_header,
     .card_empty {
-        width: calc($width-card_header + 42px + 42px);
+        // width: calc($width-card_header + 42px + 42px);
         flex-flow: column nowrap;
-        padding: 40px 42px 42px 42px;
+        // padding: 40px 42px 42px 42px;
         display: flex;
         // justify-content: center !important;
         // align-items: center !important;
         border-radius: 45px;
     }
-    .card_empty {
-        background: none;
-    }
+
     .card_content,
     .srv-description {
         display: flex;
-        width: calc($width-card_content + 60px + 42px);
         flex-flow: column nowrap;
         align-content: space-between;
         justify-content: space-between;
-        padding: 40px 66px 42px 42px;
-        border-radius: 45px 90px 45px 45px;
 
         p {
             padding: 0;
             margin: 0;
         }
     }
-}
-.card_title,
-.card_empty {
-    height: 82px;
-    width: calc($width-card_content + 66px + 42px);
-    padding: 40px 66px 42px 42px;
-    border-radius: 45px 82px 0px 0px;
-    background: $white;
 }
 
 @keyframes opacityAnimationDelay {

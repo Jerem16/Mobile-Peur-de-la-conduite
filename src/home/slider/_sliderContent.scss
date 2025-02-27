@@ -6,7 +6,6 @@
         z-index: 10;
         text-align: center;
         width: 100%;
-        max-width: 900px;
         .sld-card_title {
             width: fit-content;
             background: $sun;
@@ -35,6 +34,7 @@
             height: fit-content;
             background: $white;
             border-radius: 2rem;
+            max-width: 420px;
             filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
             p {
                 display: block;

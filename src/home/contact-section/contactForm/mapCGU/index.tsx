@@ -54,7 +54,7 @@ const MapQuestions: React.FC<DrivingFormProps> = ({
         onOptionChange(state === condition ? null : condition);
     };
     return (
-        <div className="form-questions flx-c">
+        <div className="form-questions cgu">
             {options.map((option) => (
                 <div className="questions" key={option.id}>
                     <div className="response boolean-checkbox">

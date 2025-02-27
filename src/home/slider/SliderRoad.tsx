@@ -1,12 +1,10 @@
 import React from "react";
-import { sliderContent } from "../../assets/data/content/slider";
-import SliderNumber from "./svg/SliderNumber";
 
 interface SliderRoadProps {
     currentSlide: number;
 }
 
-const SliderRoad: React.FC<SliderRoadProps> = ({ currentSlide }) => {
+const SliderRoad: React.FC<SliderRoadProps> = () => {
     return (
         <div className="sld-container">
             <img
@@ -16,7 +14,6 @@ const SliderRoad: React.FC<SliderRoadProps> = ({ currentSlide }) => {
                 width="1635"
                 height="528"
             />
-            <SliderNumber SlideClass={sliderContent[currentSlide].ref} />
         </div>
     );
 };

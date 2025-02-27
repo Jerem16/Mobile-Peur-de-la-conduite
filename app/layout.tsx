@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "../src/assets/styles/main.scss";
 import { DrivingProvider } from "../src/utils/context/DrivingContext";
 import { SearchProvider } from "../src/utils/context/SearchContext";
 import { Suspense } from "react";
@@ -10,6 +9,7 @@ import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Footer from "../src/components/footer/footer"
 
 import "./globals.css";
+import "../src/assets/styles/main.scss";
 
 export const RobotoFlex = localFont({
     src: "/fonts/RobotoFlex.woff2",

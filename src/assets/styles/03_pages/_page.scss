@@ -11,25 +11,4 @@
         transform: scaleY(1);
         transition: all 375ms ease-in-out;
     }
-    h2 {
-        display: flex;
-        flex-flow: row;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0;
-    }
-    .s1,
-    .s2,
-    .s3 {
-        padding: 2rem;
-        background: rgb(227, 195, 195);
-        height: calc(100vh - 180px);
-    }
-    .s2 {
-        background: rgb(172, 212, 172);
-    }
-    .s3 {
-        background: rgb(176, 176, 214);
-    }
 }

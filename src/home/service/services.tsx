@@ -1,21 +1,17 @@
-// Services.tsx
 "use client";
 import React from "react";
 import Image from "next/image";
 import DriveQuestions from "./questions/driveQuestions";
 import AccQuestions from "./questions/accompanistQuestions";
 import PermitStatus from "./permitStatus";
+import { serviceContent } from "../../assets/data/content/services";
 
 const Services: React.FC = () => {
     return (
         <>
             <div className="services content-wrapper">
-                <div className="card_bg"></div>
-                <div className="segment segment-title">
-                    <div className="card_empty"></div>
-                    <h2 className="card_title">Nos Services</h2>
-                </div>
                 <div className="segment">
+                    <h2 className="card_title">Services</h2>
                     <div className="card_header flx-c">
                         <Image
                             className="srv-img_typo"
@@ -24,7 +20,6 @@ const Services: React.FC = () => {
                             width={360}
                             height={83}
                             loading="lazy"
-                            priority={false}
                         />
                         <Image
                             className="srv-img_lesson"
@@ -33,22 +28,23 @@ const Services: React.FC = () => {
                             width={288}
                             height={265}
                             loading="lazy"
-                            priority={false}
                         />
                     </div>
+
                     <div className="card_content">
-                        <p>
-                            Découvre un aperçu de mes services conçus
-                            spécialement pour répondre aux besoins des
-                            conducteurs débutants et confirmés :
-                        </p>
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: serviceContent[0].description,
+                            }}
+                        />
                         <DriveQuestions />
+                        <AccQuestions />
                     </div>
+
                     {/**
                      * //! if hasPermit === true && supervisedDriving === true
                      * //! return <AccQuestions/>
                      */}
-                    <AccQuestions />
                 </div>
             </div>
             {/**

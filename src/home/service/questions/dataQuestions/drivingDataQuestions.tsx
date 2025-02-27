@@ -17,7 +17,7 @@ const DrivingData: React.FC<DrivingFormProps> = ({
     const serviceForm = [
         {
             id: "permit",
-            question: "Avez-vous le permis de conduire ?",
+            question: "🚦 Avez-vous déjà obtenu le permis de conduire ?",
             name: "permis",
             options: [
                 { id: "permisOk", label: "Oui", value: "oui", condition: true },
@@ -33,7 +33,7 @@ const DrivingData: React.FC<DrivingFormProps> = ({
         },
         {
             id: "supervised",
-            question: "Conduite accompagnée ou supervisée ?",
+            question: "🎓 Conduite accompagnée ou supervisée",
             name: "supervised",
             options: [
                 { id: "AACOk", label: "Oui", value: "oui", condition: true },

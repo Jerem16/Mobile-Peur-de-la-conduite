@@ -6,15 +6,14 @@
             display: flex;
             flex-flow: column wrap;
             gap: 12px;
-            width: 607px;
             label {
                 @include navLink;
                 color: #1d1d1b;
                 text-align: justify;
-                height: 20px;
-                display: inline flex;
                 justify-content: space-between;
                 align-items: center;
+                display: block;
+                height: fit-content;
             }
             input,
             textarea {
@@ -30,42 +29,70 @@
                 height: 236px;
             }
             .error-message {
-                text-align: right;
+                position: initial;
+                display: block;
+                // text-align: right;
                 @include navLink;
                 margin: 0;
                 padding: 0;
                 color: red;
                 font-size: 1rem;
                 margin-top: 5px;
+                width: 100%;
+                // border: 1px solid #000;
             }
         }
         .endOF {
             height: 1px;
-            width: 607px;
+            // width: 607px;
             button[type="submit"] {
                 position: relative;
                 top: -22px;
                 margin: 0 auto;
             }
         }
-        .form-questions:nth-child(5) {
+        .cgu {
             position: relative;
-            top: -10px;
+            top: 0px;
+            gap: 0rem;
+            margin: 1rem 0 3rem 0;
             .questions {
+                display: inline-flex;
+                flex-flow: row;
                 justify-content: flex-start;
+                // gap: 1rem;
+                margin: 0 0 0.5rem 0;
+
+                p {
+                    position: relative;
+                    font-weight: 500;
+                    // margin-left: 8px;
+                    display: block;
+                    padding-top: 0.65rem;
+                    font-size: 1rem;
+                    width: 100%;
+                }
+                .response {
+                    position: relative;
+                    left: -12px;
+                    top: -18px;
+                    width: 40px;
+                    input[type="checkbox"] {
+                        margin: 0;
+                        padding: 0;
+                        left: 0;
+                    }
+                    span {
+                        position: absolute;
+                        left: 0;
+                        &.checked {
+                            left: 5px;
+                        }
+                    }
+                }
             }
             label {
                 display: none;
-            }
-            .response {
-                input[type="checkbox"] {
-                    margin: 0;
-                    padding: 0;
-                    left: 0;
-                }
-                span {
-                    left: -24px;
-                }
             }
         }
         .valid-message {

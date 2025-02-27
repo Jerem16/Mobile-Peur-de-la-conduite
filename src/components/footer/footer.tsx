@@ -4,19 +4,16 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="container">
-                <div className="ft_p-1">
-                    <nav>
-                        <Link href="/mentions-legales">Mentions légales</Link>
-                        <Link href="/informations-legales">
-                            Informations légales
-                        </Link>
-                        <Link href="/contact">Contact</Link>
-                    </nav>
-                    <p>Peur-de-la-conduite.fr © 2024. Tous droits réservés.</p>
-                </div>
-                <div className="ft_p-2">
+                <nav className="ft_p-1">
+                    <Link href="/mentions-legales">Mentions légales</Link>
+                    <Link href="/informations-legales">
+                        Informations légales
+                    </Link>
+                    <Link href="/contact">Contact</Link>
+
+                    <p>Peur-de-la-conduite.fr © 2024.</p>
                     <SocialLinks />
-                </div>
+                </nav>
             </div>
         </footer>
     );

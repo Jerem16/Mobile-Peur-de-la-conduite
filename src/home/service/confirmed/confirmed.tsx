@@ -5,21 +5,8 @@ import Space from "../../../utils/Space";
 const Confirmed = () => {
     return (
         <div className="services content-wrapper content-srv" id="confirmed">
-            <Image
-                className="road-confirmed"
-                src="/img/services/road-confirmed.svg"
-                alt={`Logo background`}
-                width={1706.7} //1706.7 2596.4
-                height={2596.4}
-                loading="lazy"
-                priority={false}
-            />
-            <div className="card_bg"></div>
             <div className="segment segment-title">
-                <div className="card_empty flx-c">
-                    <h2 className="card_title">Conducteurs confirmés</h2>
-                </div>
-                <div className="card_title"></div>
+                <h2 className="card_title">Conducteurs confirmés </h2>
             </div>
             <div className="segment">
                 <div className="card_header flx-c">
@@ -27,20 +14,10 @@ const Confirmed = () => {
                         Prenez la route en toute sérénité !
                         <Space />
                         <span>
-                            Boostez votre confiance et renforcez votre maîtrise du volant !
+                            Boostez votre confiance et renforcez votre maîtrise
+                            du volant !
                         </span>
                     </p>
-                    <div className="aside-bg">
-                        <Image
-                            className="srv-aside-bg"
-                            src="/img/services/aside-bg.svg"
-                            alt={`Logo background`}
-                            width={360}
-                            height={860}
-                            loading="lazy"
-                            priority={false}
-                        />
-                    </div>
                 </div>
                 <div className="card_content">
                     <div className="flx-c srv-description o1">

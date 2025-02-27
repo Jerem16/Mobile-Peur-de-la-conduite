@@ -13,7 +13,7 @@ const AccompanistData: React.FC<DrivingFormProps> = ({
     const serviceForm = [
         {
             id: "accompagnateur",
-            question: "Vous êtes accompagnateur ?",
+            question: "🚦 Êtes-vous accompagnateur ?",
             name: "accompagnateur",
             options: [
                 { id: "accompOk", label: "Oui", value: "oui", condition: true },
@@ -30,20 +30,17 @@ const AccompanistData: React.FC<DrivingFormProps> = ({
     ];
 
     return (
-        <div className="segment accompanist-bg">
-            <div className="card_header isAccompanist"></div>
-            <div className="card_content isAccompanist">
-                {serviceForm.map((question) => (
-                    <RadioQuestionForm
-                        key={question.id}
-                        question={question.question}
-                        options={question.options}
-                        state={question.state}
-                        onOptionChange={question.onOptionChange}
-                    />
-                ))}
-            </div>
-        </div>
+        <>
+            {serviceForm.map((question) => (
+                <RadioQuestionForm
+                    key={question.id}
+                    question={question.question}
+                    options={question.options}
+                    state={question.state}
+                    onOptionChange={question.onOptionChange}
+                />
+            ))}
+        </>
     );
 };
 

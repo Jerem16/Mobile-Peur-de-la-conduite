@@ -5,43 +5,21 @@ import Space from "../../../utils/Space";
 const Beginner = () => {
     return (
         <div className="services content-wrapper content-srv" id="beginner">
-            <div className="card_bg">
-                <Image
-                    className="road-confirmed"
-                    src="/img/services/road-Beginner.svg"
-                    alt={`Logo background`}
-                    width={1706.7} //1706.7 2596.4
-                    height={2957.4}
-                    loading="lazy"
-                    priority={false}
-                />
-            </div>
             <div className="segment segment-title">
                 <div className="card_empty flx-c">
                     <h2 className="card_title">Conducteurs novice</h2>
                 </div>
-                <div className="card_title"></div>
             </div>
             <div className="segment">
                 <div className="card_header flx-c">
                     <p>
                         Mets toutes les chances de ton côté !
                         <Space />
+                        <br />
                         <span>
                             Réussis ton examen et conduis en toute confiance !
                         </span>
                     </p>
-                    <div className="aside-bg">
-                        <Image
-                            className="srv-aside-bg"
-                            src="/img/services/aside-bg.svg"
-                            alt={`Logo background`}
-                            width={360}
-                            height={860}
-                            loading="lazy"
-                            priority={false}
-                        />
-                    </div>
                 </div>
                 <div className="card_content">
                     <div className="flx-c srv-description o1">

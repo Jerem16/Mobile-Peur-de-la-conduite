@@ -18,7 +18,7 @@ const About = () => {
                 <div className="segment" key={index + "ab-card"}>
                     <div className="card_header flx-c">
                         <h3>
-                            {content.cardIdentity.firstName}{" "}
+                            {content.cardIdentity.firstName}
                             <span>{content.cardIdentity.name}</span>
                         </h3>
                         <Image
@@ -29,7 +29,9 @@ const About = () => {
                             height={225}
                             priority={true}
                         />
-                        <p>{content.cardIdentity.profession}</p>
+                        <p className="profession">
+                            {content.cardIdentity.profession}
+                        </p>
                     </div>
                     <div className="card_content">
                         {content.cardContent.description.map((line, i) => (
