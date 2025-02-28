@@ -11,24 +11,26 @@
     height: fit-content;
     margin: auto;
 }
-.sld-info_ctn {
-    height: 197px;
+p.p-info_ctn {
     position: relative;
-    top: -13rem;
-    right: 0;
+    top: -3rem;
+    text-align: right;
+    padding: 0;
+    width: 380px;
+    @include bannerDescribeBold;
+}
+.sld-info_ctn {
+    // height: 197px;
+    position: relative;
+    top: -2rem;
+    // right: 0;
     z-index: 1;
     display: inline-flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    padding: 0 1rem;
+    // padding: 0 1rem;
     min-height: 135px;
 
-    p {
-        text-align: right;
-        padding: 0 2rem 0.5rem 0rem;
-        width: 380px;
-        @include bannerDescribeBold;
-    }
     .icon-position {
         width: 135px;
         height: 135px;

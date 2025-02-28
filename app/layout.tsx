@@ -17,7 +17,6 @@ const Montserrat = localFont({
     variable: "--montserrat",
     weight: "100 900",
     display: "swap",
-    preload: true
 });
 export const RobotoFlex = localFont({
     src: "/fonts/RobotoFlex.woff2",
