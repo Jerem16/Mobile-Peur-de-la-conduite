@@ -1,13 +1,7 @@
-// Appelle `use client` pour ce fichier
 "use client";
 
 import dynamic from "next/dynamic";
 
-// Chargement paresseux des composants
-const AboutLazy = dynamic(() => import("../src/home/about/about"), {
-    ssr: false,
-    loading: () => <div>Chargement de la section...</div>,
-});
 const ServicesLazy = dynamic(() => import("../src/home/service/services"), {
     ssr: false,
     loading: () => <div>Chargement des services...</div>,
