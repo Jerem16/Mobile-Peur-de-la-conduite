@@ -22,3 +22,12 @@
         }
     }
 }
+.sld-CTA {
+    transform: scale(1.5) translateX(-100%);
+    transition: transform 0.5s ease-out; /* Animation avec délai de 1s */
+}
+
+/* Quand la section est active, l'élément rétrécit */
+#slider.active-section .sld-CTA {
+    transform: translateX(0%); /* Se referme vers le bas */
+}
