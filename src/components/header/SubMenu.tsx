@@ -23,7 +23,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
         e.stopPropagation();
         e.preventDefault(); // Empêche la navigation par défaut
         onSubItemClick(path); // Appelle la fonction pour gérer le clic
-        closeHamburgerMenu(800);
+        closeHamburgerMenu(650);
     };
 
     const handleKeyDown = (

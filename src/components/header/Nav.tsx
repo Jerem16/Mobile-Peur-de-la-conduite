@@ -28,7 +28,7 @@ const Nav: React.FC<NavProps> = ({ menuItems, onNavigationClick }) => {
                 aria-label="ouvrir le menu"
                 onClick={
                     hamburgerMenuIsOpen
-                        ? () => closeHamburgerMenu(500)
+                        ? () => closeHamburgerMenu(200)
                         : openHamburgerMenu
                 }
                 className="menu"

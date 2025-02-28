@@ -105,6 +105,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fr-FR">
+            {/* <head>
+                <link rel="Hello" href="img/favicon/site.webmanifest" />
+            </head> */}
             <body
                 className={`${Montserrat.variable} ${RobotoFlex.variable} ${Nunito.variable}`} id="top"
             >
