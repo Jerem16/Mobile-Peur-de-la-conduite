@@ -27,7 +27,7 @@ const About = () => {
                             alt={`Avatar de ${content.cardIdentity.firstName}`}
                             width={225}
                             height={225}
-                            priority={false}
+                            priority={true}
                         />
                         <p className="profession">
                             {content.cardIdentity.profession}

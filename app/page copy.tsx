@@ -1,44 +1,53 @@
-// import React from "react";
-// import { Metadata } from "next";
-// import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
-// import Slider from "../src/home/slider/Slider";
+"use client";
 
-// import { SliderProvider } from "../src/utils/context/slider/SliderContext";
+import React from "react";
+import { Metadata } from "next";
+import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
+import Slider from "../src/home/slider/Slider";
+import { SliderProvider } from "../src/utils/context/slider/SliderContext";
+import { useInView } from "react-intersection-observer";
+import dynamic from "next/dynamic";
 
-// export const metadata: Metadata = {
-//     title: "Accueil | Peur de la conduite",
-// };
-// import HomeOut from "./outPage";
-// export default function Home() {
-//     const About = React.lazy(() => import("../src/home/about/about"));
-//     const Services = React.lazy(() => import("../src/home/service/services"));
-//     const ContactHome = React.lazy(() => import("../src/home/contact-section"));
+// Lazy Loading des composants
+const AboutLazy = dynamic(() => import("../src/home/about/about"), {
+    ssr: false,
+});
+const ServicesLazy = dynamic(() => import("../src/home/service/services"), {
+    ssr: false,
+});
 
-//     return (
-//         <ScrollSectionsWrapper>
-//             <section className="section slider-bg" id="slider">
-//                 <SliderProvider>
-//                     <Slider />
-//                 </SliderProvider>
-//             </section>
-//             <section className="section about-bg" id="about">
-//                 <div className="fixed-menu"></div>
-//                 <React.Suspense fallback={<div>Chargement...</div>}>
-//                     <About />
-//                 </React.Suspense>
-//             </section>
-//             <section className="section" id="services">
-//                 <div className="fixed-menu"></div>
-//                 <React.Suspense fallback={<div>Chargement...</div>}>
-//                     <Services />
-//                 </React.Suspense>
-//             </section>
-//             <section className="section" id="contact">
-//                 <div className="fixed-menu"></div>
-//                 <React.Suspense fallback={<div>Chargement...</div>}>
-//                     <ContactHome />
-//                 </React.Suspense>
-//             </section>
-//         </ScrollSectionsWrapper>
-//     );
-// }
+export const metadata: Metadata = {
+    title: "Accueil | Peur de la conduite",
+};
+
+export default function Home() {
+    // Observer si la section "about" est visible
+    const { ref: aboutRef, inView: aboutVisible } = useInView({
+        triggerOnce: true,
+        threshold: 0.3,
+    });
+
+    return (
+        <ScrollSectionsWrapper>
+            <section className="section slider-bg" id="slider">
+                <SliderProvider>
+                    <Slider />
+                </SliderProvider>
+            </section>
+
+            {/* Section About avec Intersection Observer */}
+            <section className="section about-bg" id="about" ref={aboutRef}>
+                <div className="fixed-menu"></div>
+                {aboutVisible && <AboutLazy />}
+            </section>
+
+            {/* Charger Services uniquement quand About est visible */}
+            {aboutVisible && (
+                <section className="section" id="services">
+                    <div className="fixed-menu"></div>
+                    <ServicesLazy />
+                </section>
+            )}
+        </ScrollSectionsWrapper>
+    );
+}

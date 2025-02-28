@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 
-export default function useIntersectionObserver() {
+export default function useInView() {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement | null>(null);
 

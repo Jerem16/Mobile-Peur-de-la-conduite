@@ -20,10 +20,6 @@ const ContactHomeLazy = dynamic(() => import("../src/home/contact-section"), {
 export default function Home() {
     return (
         <>
-            <section className="section about-bg" id="about">
-                <div className="fixed-menu"></div>
-                <AboutLazy />
-            </section>
             <section className="section" id="services">
                 <div className="fixed-menu"></div>
                 <ServicesLazy />

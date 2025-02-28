@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Slider from "../src/home/slider/Slider";
-
+import About from "../src/home/about/about";
 import { SliderProvider } from "../src/utils/context/slider/SliderContext";
 
 export const metadata: Metadata = {
@@ -16,6 +16,12 @@ export default function Home() {
                 <SliderProvider>
                     <Slider />
                 </SliderProvider>
+            </section>
+            <section className="section about-bg" id="about">
+                <div className="fixed-menu"></div>
+                <React.Suspense fallback={<div>Chargement...</div>}>
+                    <About />
+                </React.Suspense>
             </section>
             <HomeOut />
         </ScrollSectionsWrapper>
