@@ -18,20 +18,20 @@ const Montserrat = localFont({
     weight: "100 900",
     display: "swap",
 });
-export const RobotoFlex = localFont({
-    src: "/fonts/RobotoFlex.woff2",
-    variable: "--RobotoFlex",
-    weight: "100 900",
-    display: "swap", 
-    preload: false
-});
-const Nunito = localFont({
-    src: "./fonts/Nunito.woff2",
-    variable: "--nunito",
-    weight: "100 900",
-    display: "swap", 
-    preload: false
-});
+// export const RobotoFlex = localFont({
+//     src: "/fonts/RobotoFlex.woff2",
+//     variable: "--RobotoFlex",
+//     weight: "100 900",
+//     display: "swap", 
+//     preload: false
+// });
+// const Nunito = localFont({
+//     src: "./fonts/Nunito.woff2",
+//     variable: "--nunito",
+//     weight: "100 900",
+//     display: "swap", 
+//     preload: false
+// });
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.peur-de-la-conduite.fr/"),
@@ -105,11 +105,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fr-FR">
-            {/* <head>
-                <link rel="Hello" href="img/favicon/site.webmanifest" />
-            </head> */}
+
             <body
-                className={`${Montserrat.variable} ${RobotoFlex.variable} ${Nunito.variable}`} id="top"
+                className={`${Montserrat.variable}`} id="top"
             >
                 <ScrollProvider>
                     <ScrollSectionsWrapper>

@@ -1,53 +1,8 @@
 .slider {
     top: 0;
     z-index: 2;
-    .content-wrapper {
-        top: 0;
-    }
     .intro-message {
         height: 70vh;
-        min-height: 630px;
-    }
-    .start {
-        .slider-content {
-            // background: #12710f;
-            .sld-card_title {
-                animation: opacityAnimation 0.75s ease-in-out backwards;
-                h2 {
-                    .bold {
-                        // animation: opacityAnim 1s ease-in-out backwards;
-                        &:nth-child(2) {
-                            // animation: opacityAnim 1s ease-in-out backwards 0.5s;
-                        }
-                    }
-                }
-            }
-            .banner-description {
-                margin: auto;
-                padding: 1rem;
-                width: calc(100% - 1rem);
-                max-width: 420px;
-                margin-top: 268px;
-                background: $white;
-                border-radius: 2rem;
-                filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-                p {
-                    text-align: center;
-                    @include bannerDescribe;
-                    // display: none;
-
-                    .bold {
-                        font-weight: 700;
-                        margin-top: 0.5rem;
-                    }
-                }
-                p {
-                    &:nth-child(2) {
-                        // display: none;
-                    }
-                }
-            }
-        }
     }
     .slider-content {
         position: absolute;
@@ -78,7 +33,7 @@
             padding: 1rem;
             width: calc(100% - 1rem);
             max-width: 420px;
-            margin-top: 268px;
+            margin-top: 276px;
             background: $white;
             border-radius: 2rem;
             filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
@@ -147,27 +102,27 @@
                 transform: translateX(300%);
             }
         }
-        .sld-card_title {
+    }
+    .sld-card_title {
+        opacity: 0;
+        transform: translateY(160px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        h2 {
             opacity: 0;
-            transform: translateY(160px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            h2 {
-                opacity: 0;
-                transform: translateY(-16px);
-                transition: opacity 0.25s ease-in-out 0.25s,
-                    transform 0.25s ease-in-out 0.25s;
-            }
+            transform: translateY(-16px);
+            transition: opacity 0.25s ease-in-out 0.25s,
+                transform 0.25s ease-in-out 0.25s;
         }
-        .banner-description {
+    }
+    .banner-description {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out 0.25s,
+            transform 0.75s ease-in-out 0.25s;
+        p {
             opacity: 0;
-            transition: opacity 0.5s ease-in-out 0.25s,
-                transform 0.75s ease-in-out 0.25s;
-            p {
-                opacity: 0;
-                transform: translateY(-16px);
-                transition: opacity 0.25s 0.25s ease-in-out,
-                    transform 0.25s 0.25s ease-in-out;
-            }
+            transform: translateY(-16px);
+            transition: opacity 0.25s 0.25s ease-in-out,
+                transform 0.25s 0.25s ease-in-out;
         }
     }
 }

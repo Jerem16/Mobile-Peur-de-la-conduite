@@ -1,51 +1,41 @@
 "use client";
-import React, { useContext } from "react";
-import { sliderContent } from "../../assets/data/content/slider";
-import Space from "../../utils/Space";
+import React, { useContext, useState, useEffect } from "react";
+import { sliderContent } from "../../assets/data/content/slider"; // Assure-toi que ce tableau existe bien
 import SliderArrow from "./SliderArrow";
-
 import { SliderContext } from "../../utils/context/slider/SliderContext";
+import SlideItem from "./SlideItem";
+import SliderIntro from "./SliderContentIntro";
+
 const SliderContent = () => {
     const sliderContext = useContext(SliderContext);
+    const [showSlider, setShowSlider] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowSlider(true);
+        }, 2800);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     if (!sliderContext) {
         throw new Error("Slider must be used within a SliderProvider");
     }
 
     const { nextSlide, prevSlide, getClass } = sliderContext;
+
+    if (!showSlider) {
+        return <SliderIntro />;
+    }
+
     return (
         <>
             {sliderContent.map((slide, index) => (
-                <div key={index + "C"} className={`slide ${getClass(index)}`}>
-                    <div className="slider-content">
-                        <div className="sld-card_title flx-c">
-                            <h2>
-                                {slide.h2}
-                                <Space />
-                                <span className="bold">{slide.h2bold}</span>
-                                <span className="bold">{slide.h2bold2}</span>
-                                <span className="bold">{slide.h2bold3}</span>
-                            </h2>
-                        </div>
-                        <div className="banner-description">
-                            <p>
-                                <span className="bold">
-                                    {slide.descriptionBold}
-                                </span>
-                                {slide.description}
-                                <span className="bold">
-                                    {slide.descriptionBoldEnd}
-                                </span>
-                            </p>
-                            <p>
-                                {slide.description2}
-                                <span className="bold">
-                                    {slide.descriptionBold2}
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <SlideItem
+                    key={index + "slider"}
+                    {...slide}
+                    className={`slide ${getClass(index)}`}
+                />
             ))}
             <SliderArrow prevSlide={prevSlide} nextSlide={nextSlide} />
         </>

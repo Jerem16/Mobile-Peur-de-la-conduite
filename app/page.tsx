@@ -11,19 +11,35 @@ export const metadata: Metadata = {
 import HomeOut from "./outPage";
 export default function Home() {
     return (
-        <ScrollSectionsWrapper>
-            <section className="section slider-bg" id="slider">
-                <SliderProvider>
-                    <Slider />
-                </SliderProvider>
-            </section>
-            <section className="section about-bg" id="about">
-                <div className="fixed-menu"></div>
-                <React.Suspense fallback={<div>Chargement...</div>}>
-                    <About />
-                </React.Suspense>
-            </section>
-            <HomeOut />
-        </ScrollSectionsWrapper>
+        <>
+            {/* <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin=""
+                />
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto+Flex:opsz@8..144&display=swap"
+                    fetchPriority="low"
+                />
+            </head> */}
+
+            <ScrollSectionsWrapper>
+                <section className="section slider-bg" id="slider">
+                    <SliderProvider>
+                        <Slider />
+                    </SliderProvider>
+                </section>
+                <section className="section about-bg" id="about">
+                    <div className="fixed-menu"></div>
+                    <React.Suspense fallback={<div>Chargement...</div>}>
+                        <About />
+                    </React.Suspense>
+                </section>
+                <HomeOut />
+            </ScrollSectionsWrapper>
+        </>
     );
 }

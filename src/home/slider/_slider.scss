@@ -8,7 +8,6 @@
     position: relative;
     margin: 0 auto;
     z-index: 0;
-    max-height: fit-content;
 }
 .sld-bg,
 .slider {
@@ -23,3 +22,17 @@
     margin: 0 auto;
     width: auto;
 }
+#slider {
+    height: 823px;
+}
+// #slider.active-section + #about + #services {
+//     .content-wrapper {
+//         display: none !important;
+//     }
+// }
+// #about.active-section + #services + #contact {
+//     .content-wrapper {
+//         background: #000;
+//         display: none !important;
+//     }
+// }

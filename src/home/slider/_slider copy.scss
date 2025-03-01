@@ -37,5 +37,10 @@
     .sld-info_ctn {
         display: flex;
     }
+    & + section + #service {
+        background: #000;
+    }
 }
-
+#slider + section + #service {
+    background: #000;
+}

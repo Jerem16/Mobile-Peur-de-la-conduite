@@ -1,17 +1,19 @@
 .info {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-flow: column;
+    // grid-template-columns: 1fr auto;
+    // grid-template-rows: auto auto;
     align-items: center;
     justify-content: space-between;
     text-align: center;
     width: 100%;
     min-height: 220px;
-    height: calc(100% + 124px);
+    // height: calc(100% + 124px);
+    height: 266px;
     margin: auto;
-    position: relative;
-    top: -2rem;
-    gap: 1rem;
+    position: absolute;
+    top: calc(630px - 88px);
+    // gap: 0.5rem;
 }
 p.p-info_ctn {
     text-align: right;
@@ -23,17 +25,20 @@ p.p-info_ctn {
     @include bannerDescribeBold;
 }
 .sld-info_ctn {
-    position: absolute;
-    right: 0.5rem; /* Caché en dehors de l'écran */
-    bottom: calc(-10px + 5vw);
+    // position: absolute;
+    padding-right: 0.5rem; /* Caché en dehors de l'écran */
+    // bottom: calc(-10px + 5vw);
+    min-width: 339px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     z-index: 1;
     transition: transform 0.8s ease-out 0.75s; /* Animation fluide */
     transform: scale(1.5) translateX(100%);
     perspective: 1000px;
+    align-self: flex-end;
+
     .icon-position {
         align-self: flex-start;
         width: 127px;
@@ -49,7 +54,7 @@ p.p-info_ctn {
             width: 119px;
             height: 119px;
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-            // animation: opacityAnimation 0.75s ease-in-out backwards 1.25s;
+            // 
         }
         .locationP1 {
             transform: scaleY(0) rotate3d(0, 0, 1, 0deg);
