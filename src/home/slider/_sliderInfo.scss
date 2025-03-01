@@ -48,13 +48,10 @@ p.p-info_ctn {
         justify-content: flex-end;
         .locationP1,
         .locationP2 {
-            // opacity: 0;
-            // display: none;
             position: absolute;
             width: 119px;
             height: 119px;
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-            // 
         }
         .locationP1 {
             transform: scaleY(0) rotate3d(0, 0, 1, 0deg);

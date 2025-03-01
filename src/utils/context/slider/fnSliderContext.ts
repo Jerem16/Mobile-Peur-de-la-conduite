@@ -59,7 +59,8 @@ export const manageAutoSlide = (
     setStopTimerButton: React.Dispatch<React.SetStateAction<boolean>>,
     setCurrentSlide: React.Dispatch<React.SetStateAction<number>>,
     sliderContentLength: number,
-    intervalTime: number = 4000
+    intervalTime: number = 4500,
+    startDelay: number = 1000 // Délai avant le démarrage
 ) => {
     const savedSlideRef = sessionStorage.getItem("slideRef");
     if (
@@ -68,20 +69,31 @@ export const manageAutoSlide = (
     ) {
         return () => {};
     }
-    const slideInterval = startSlideInterval(
-        sliderContentLength,
-        intervalTime,
-        setCurrentSlide
-    );
-    const stopTimeout = startStopTimeout(
-        slideInterval,
-        intervalTime,
-        sliderContentLength,
-        setStopTimerButton
-    );
+
+    let slideInterval: NodeJS.Timeout;
+    const startTimeout = setTimeout(() => {
+        slideInterval = startSlideInterval(
+            sliderContentLength,
+            intervalTime,
+            setCurrentSlide
+        );
+        
+        const stopTimeout = startStopTimeout(
+            slideInterval,
+            intervalTime,
+            sliderContentLength,
+            setStopTimerButton
+        );
+
+        return () => {
+            clearInterval(slideInterval);
+            clearTimeout(stopTimeout);
+        };
+    }, startDelay);
+
     return () => {
-        clearInterval(slideInterval);
-        clearTimeout(stopTimeout);
+        clearTimeout(startTimeout);
     };
 };
+
 /*-------------------------------------------------------*/
