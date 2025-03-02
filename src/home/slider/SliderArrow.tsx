@@ -23,4 +23,4 @@ const SliderArrow: React.FC<SliderArrowProps> = ({ nextSlide, prevSlide }) => {
     );
 };
 
-export default SliderArrow;
+export default React.memo(SliderArrow);

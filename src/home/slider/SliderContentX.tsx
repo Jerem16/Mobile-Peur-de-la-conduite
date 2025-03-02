@@ -1,21 +1,16 @@
 "use client";
-import React, { useContext } from "react";
+import React from "react";
 import { sliderContent } from "../../assets/data/content/slider";
-// import SliderArrow from "./SliderArrow";
 import dynamic from "next/dynamic";
-import { SliderContext } from "../../utils/context/slider/SliderContext";
-import SlideItem from "./SlideItem";
+import { useSlider } from "../../utils/context/slider/SliderContext"; // Utilisation du hook personnalisé
+import SlideItem from "./sliderItem/SlideItem";
+
+// Dynamique importation de l'arrow
 const SliderArrow = dynamic(() => import("./SliderArrow"), { ssr: false });
 
-
 const SliderContentX = () => {
-    const sliderContext = useContext(SliderContext);
-
-    if (!sliderContext) {
-        throw new Error("Slider must be used within a SliderProvider");
-    }
-
-    const { nextSlide, prevSlide, getClass } = sliderContext;
+    // Utilisation du hook personnalisé pour accéder au contexte du slider
+    const { nextSlide, prevSlide, getClass } = useSlider();
 
     return (
         <>

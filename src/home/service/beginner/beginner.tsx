@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Space from "../../../utils/Space";
 
 const Beginner = () => {
     return (
@@ -14,7 +13,6 @@ const Beginner = () => {
                 <div className="card_header flx-c">
                     <p>
                         Mets toutes les chances de ton côté !
-                        <Space />
                         <br />
                         <span>
                             Réussis ton examen et conduis en toute confiance !

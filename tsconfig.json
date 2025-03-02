@@ -36,7 +36,7 @@
     "src/components/slider/Slider.tsx",
     "src/components/slider/SliderArrow.jsx",
     "src/components/slider/SunBG.tsx"
-  ],
+, "src/utils/context/utils/createUseContext.tsx"  ],
   "exclude": [
     "node_modules"
   ]

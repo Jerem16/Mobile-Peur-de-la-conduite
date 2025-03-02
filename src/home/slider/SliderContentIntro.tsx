@@ -1,5 +1,5 @@
-import SlideItem from "./SlideItem";
-
+import React from "react";
+import SlideItem from "./sliderItem/SlideItem";
 const SliderIntro = () => {
     return (
         <SlideItem
@@ -15,4 +15,4 @@ const SliderIntro = () => {
     );
 };
 
-export default SliderIntro;
+export default React.memo(SliderIntro);

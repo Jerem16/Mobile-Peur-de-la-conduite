@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Space from "../../../utils/Space";
 
 const Confirmed = () => {
     return (
@@ -12,7 +11,7 @@ const Confirmed = () => {
                 <div className="card_header flx-c">
                     <p>
                         Prenez la route en toute sérénité !
-                        <Space />
+                        <br />
                         <span>
                             Boostez votre confiance et renforcez votre maîtrise
                             du volant !

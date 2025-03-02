@@ -1,26 +1,19 @@
-"use client";
-import React, { useState, useEffect, lazy } from "react";
+
+import React, { lazy, Suspense } from "react";
 
 import SliderIntro from "./SliderContentIntro";
-import SliderContentX from "./SliderContentX";
+import { SliderProvider } from "../../../src/utils/context/slider/SliderContext";
 
+const SliderLazy = lazy(() => import("./SliderContentX"));
 
 const SliderContent = () => {
-    const [showSlider, setShowSlider] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowSlider(true);
-        }, 2800);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (!showSlider) {
-        return <SliderIntro />;
-    }
-
-    return <SliderContentX />;
+    return (
+        <Suspense fallback={<SliderIntro />}>
+            <SliderProvider>
+                <SliderLazy />
+            </SliderProvider>
+        </Suspense>
+    );
 };
 
 export default SliderContent;

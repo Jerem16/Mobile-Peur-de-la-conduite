@@ -18,20 +18,6 @@ const Montserrat = localFont({
     weight: "100 900",
     display: "swap",
 });
-// export const RobotoFlex = localFont({
-//     src: "/fonts/RobotoFlex.woff2",
-//     variable: "--RobotoFlex",
-//     weight: "100 900",
-//     display: "swap", 
-//     preload: false
-// });
-// const Nunito = localFont({
-//     src: "./fonts/Nunito.woff2",
-//     variable: "--nunito",
-//     weight: "100 900",
-//     display: "swap", 
-//     preload: false
-// });
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.peur-de-la-conduite.fr/"),

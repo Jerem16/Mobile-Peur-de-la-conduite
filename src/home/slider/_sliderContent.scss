@@ -8,38 +8,38 @@
         height: 70vh;
         min-height: 630px;
     }
-    .start {
-        .slider-content {
-            .sld-card_title {
-                animation: opacityAnimation 0.75s ease-in-out backwards;
-                h2 {
-                    .bold {
-                        &:nth-child(2) {
-                            animation: opacityAnim 1s ease-in-out backwards 0.5s;
-                        }
-                    }
-                }
-            }
-            .banner-description {
-                // animation: opacityAnim 0.5s ease-in-out backwards 1s;
-                p {
-                    text-align: center;
-                    @include bannerDescribe;
-                    // display: none;
+    // .start {
+    //     .slider-content {
+    //         .sld-card_title {
+    //             animation: opacityAnimation 0.75s ease-in-out backwards;
+    //             h2 {
+    //                 .bold {
+    //                     &:nth-child(2) {
+    //                         animation: opacityAnim 1s ease-in-out backwards 0.5s;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         .banner-description {
+    //             // animation: opacityAnim 0.5s ease-in-out backwards 1s;
+    //             p {
+    //                 text-align: center;
+    //                 @include bannerDescribe;
+    //                 // display: none;
 
-                    .bold {
-                        font-weight: 700;
-                        margin-top: 0.5rem;
-                    }
-                }
-                p {
-                    &:nth-child(2) {
-                        // display: none;
-                    }
-                }
-            }
-        }
-    }
+    //                 .bold {
+    //                     font-weight: 700;
+    //                     margin-top: 0.5rem;
+    //                 }
+    //             }
+    //             p {
+    //                 &:nth-child(2) {
+    //                     // display: none;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     .slider-content {
         position: absolute;
         z-index: 10;
@@ -69,6 +69,7 @@
             padding: 1rem;
             width: calc(100% - 1rem);
             max-width: 420px;
+            min-width: 320px;
             margin-top: 268px;
             background: $white;
             border-radius: 2rem;
