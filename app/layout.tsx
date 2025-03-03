@@ -91,7 +91,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fr-FR">
-
+           <head>
+                <link
+                    rel="stylesheet"
+                    href="./deferCss.css"
+                    fetchPriority="low"
+                />
+            </head>
             <body
                 className={`${Montserrat.variable}`} id="top"
             >

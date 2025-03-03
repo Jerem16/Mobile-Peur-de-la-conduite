@@ -11,12 +11,12 @@
 }
 
 @font-face {
-    font-family: "Roboto Flex";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-stretch: 100%;
     font-display: swap;
-    src: url(https://fonts.gstatic.com/s/robotoflex/v27/NaNNepOXO_NexZs0b5QrzlOHb8wCikXpYqmZsWI-__OGbt8jZktqc2V3Zs0KvDLdBP8SBZtOs2IifRuUZQMsPJtUsR4DEK6cULNeUx9XgTnH37Ha_FIAp4Fm0PP1hw45DntW2x0wZGzhPmr1YNMYKYn9_1IQXGwJAiUJVUMdN5YUW4O8HtSoXjC79QRyaLshNDUf3e0O-gn5rrZCu20YNau4OPE.woff2)
+    src: url(https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2)
         format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
         U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
