@@ -11,7 +11,7 @@ import HomeOut from "./outPage";
 export default function Home() {
     return (
         <>
-            {/* <head>
+            <head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"
@@ -23,7 +23,7 @@ export default function Home() {
                     href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto+Flex:opsz@8..144&display=swap"
                     fetchPriority="low"
                 />
-            </head> */}
+            </head>
 
             <ScrollSectionsWrapper>
                 <section className="section slider-bg" id="slider">
