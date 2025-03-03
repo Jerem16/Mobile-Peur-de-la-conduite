@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { DrivingProvider } from "../src/utils/context/DrivingContext";
-import { Suspense } from "react";
 import HeaderProps from "./headerProps";
-import { ScrollProvider } from "../src/utils/context/ScrollContext";
-import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Footer from "../src/components/footer/footer"
-
+import ClientLayout from "./ClientLayout"; 
 
 
 export const metadata: Metadata = {
@@ -81,12 +77,10 @@ export default function RootLayout({
     return (
         <html lang="fr-FR">
            <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>                
-                <link
-                    rel="stylesheet"
-                    href="./styles.css"
-                    fetchPriority="high"
-                />
+                <link rel="preload" href="./styles.css" as="style" />
+                <link rel="stylesheet" href="./styles.css" fetchPriority="high"/>
                 <link
                     rel="stylesheet"
                     href="./deferCss.css"
@@ -94,22 +88,18 @@ export default function RootLayout({
                 />
             </head>
             <body id="top">
-                <ScrollProvider>
-                    <ScrollSectionsWrapper>
-                            <DrivingProvider>
-                                <Suspense fallback={<div>Chargement du header...</div>}>
-                                    <header>
-                                        <div className="content-wrapper">
-                                            <HeaderProps />
-                                        </div>
-                                    </header>
-                                    <main>{children}</main>
-                                    <Footer />
-                                </Suspense>
-                            </DrivingProvider>
-                    </ScrollSectionsWrapper>
-                </ScrollProvider>
+                    <ClientLayout>
+                        <header>
+                            <div className="content-wrapper">
+                                <HeaderProps />
+                            </div>
+                        </header>
+                        <main>{children}</main>
+                        <Footer />
+                    </ClientLayout>
             </body>
         </html>
     );
 }
+
+

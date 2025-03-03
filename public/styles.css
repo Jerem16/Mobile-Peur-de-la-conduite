@@ -186,6 +186,24 @@ textarea {
 .segment {
     position: relative;
 }
+.slider-bg {
+    position: relative;
+    margin: 0 auto;
+    z-index: 0;
+    min-height: 100vw;
+}
+.sld-bg,
+.slider {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.sld-sun,
+.slide,
+.slider-content {
+    margin: 0 auto;
+    width: auto;
+}
 .segment {
     width: calc(100% - 2rem);
     height: auto;
@@ -305,26 +323,7 @@ header {
 .logo .logo-circle {
     filter: blur(0.1px);
 }
-.btn-style_blue {
-    border-radius: 8px;
-    padding: 0.75rem 2rem;
-    height: 44px;
-    background: #1a6de5;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transform: scale(1);
-    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
-    will-change: transform, box-shadow;
-    min-width: 160px;
-}
-.btn-style_blue,
-.btn-style_blue a {
-    font-family: Nunito, serif;
-    color: #fff;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1rem;
-    text-align: center;
-}
+
 .sld-CTA p,
 p.p-info_ctn {
     color: #1e1e1e;
@@ -347,23 +346,7 @@ p.p-info_ctn {
     );
     will-change: transform, opacity;
 }
-.boolean-checkbox input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: #c4c4c4;
-    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
-}
-.boolean-checkbox input[type="checkbox"],
-.boolean-checkbox span {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    position: relative;
-}
-.boolean-checkbox span {
-    z-index: -1;
-}
+
 .sld-container {
     height: 100%;
     max-height: 630px;
@@ -424,12 +407,39 @@ p.p-info_ctn {
     display: block;
     width: 100%;
 }
-.slider .slider-content .banner-description p,
-form.srv-form label {
-    font-family: Montserrat, sans-serif;
-    line-height: 1.75rem;
-    font-style: normal;
+.slider .slide.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
+.slider .slide.active .sld-card_title {
+    transition: opacity 375ms ease-in-out 0.25s,
+        transform 375ms ease-in-out 0.25s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.slider .slide.active .banner-description p,
+.slider .slide.active .sld-card_title h2 {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+.slider .slide.active .banner-description {
+    transition: opacity 0.75s ease-in-out 375ms,
+        transform 0.75s ease-in-out 375ms;
+    opacity: 1;
+    transform: translateX(0);
+}
+.slide.active .banner-description,
+.slide.active .sld-card_title {
+    opacity: 1 !important;
+    transform: none !important;
+}
+.slide.active {
+    will-change: transform, opacity !important;
+}
+.slider .slider-content .banner-description p,
+
 .about .segment .card_header h3,
 .services .segment .card_header h3,
 .sld-CTA p,
@@ -604,21 +614,4 @@ p.p-info_ctn {
     border-bottom-left-radius: 450px;
     border-bottom-right-radius: 450px;
     z-index: 2;
-}
-.slider-bg {
-    position: relative;
-    margin: 0 auto;
-    z-index: 0;
-}
-.sld-bg,
-.slider {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
-.sld-sun,
-.slide,
-.slider-content {
-    margin: 0 auto;
-    width: auto;
 }

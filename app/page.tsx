@@ -1,6 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Slider from "../src/home/slider/Slider";
 import About from "../src/home/about/about";
 
@@ -25,7 +24,7 @@ export default function Home() {
                 />
             </head> */}
 
-            <ScrollSectionsWrapper>
+            <>
                 <section className="section slider-bg" id="slider">
                     <Slider />
                 </section>
@@ -36,7 +35,7 @@ export default function Home() {
                     </React.Suspense>
                 </section>
                 <HomeOut />
-            </ScrollSectionsWrapper>
+            </>
         </>
     );
 }
