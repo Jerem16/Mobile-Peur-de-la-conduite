@@ -8,7 +8,7 @@ import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Footer from "../src/components/footer/footer"
 
 import "./globals.css";
-import "../src/assets/styles/main.scss";
+// import "../public";
 
 
 
@@ -91,7 +91,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fr-FR">
-           <head>
+           <head>                
+                {/* <link
+                    rel="stylesheet"
+                    href="./styles.css"
+                    fetchPriority="high"
+                /> */}
                 <link
                     rel="stylesheet"
                     href="./deferCss.css"
