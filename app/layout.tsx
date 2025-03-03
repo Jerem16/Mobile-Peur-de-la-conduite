@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { DrivingProvider } from "../src/utils/context/DrivingContext";
 import { Suspense } from "react";
 import HeaderProps from "./headerProps";
@@ -7,17 +6,7 @@ import { ScrollProvider } from "../src/utils/context/ScrollContext";
 import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Footer from "../src/components/footer/footer"
 
-import "./globals.css";
-// import "../public";
 
-
-
-const Montserrat = localFont({
-    src: "./fonts/Montserrat.woff2",
-    variable: "--montserrat",
-    weight: "100 900",
-    display: "swap",
-});
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.peur-de-la-conduite.fr/"),
@@ -91,21 +80,20 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fr-FR">
-           <head>                
-                {/* <link
+           <head>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>                
+                <link
                     rel="stylesheet"
                     href="./styles.css"
                     fetchPriority="high"
-                /> */}
+                />
                 <link
                     rel="stylesheet"
                     href="./deferCss.css"
                     fetchPriority="low"
                 />
             </head>
-            <body
-                className={`${Montserrat.variable}`} id="top"
-            >
+            <body id="top">
                 <ScrollProvider>
                     <ScrollSectionsWrapper>
                             <DrivingProvider>
