@@ -1,26 +1,23 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Metadata } from "next";
 import Slider from "../src/home/slider/Slider";
-import About from "../src/home/about/about";
+// import About from "../src/home/about/about";
 
 export const metadata: Metadata = {
     title: "Accueil | Peur de la conduite",
 };
-import HomeOut from "./outPage";
+// import HomeOut from "./outPage";
+const About = lazy(() => import("../src/home/about/about"));
+const HomeOut = lazy(() => import("./outPage"));
 export default function Home() {
     return (
         <>
             {/* <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossOrigin=""
-                />
+            <link rel="preload" href="./deferCss.css" as="style" />
                 <link
                     rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto+Flex:opsz@8..144&display=swap"
-                    fetchPriority="low"
+                    href="./deferCss.css"
+                    fetchPriority="auto"
                 />
             </head> */}
 
@@ -34,7 +31,9 @@ export default function Home() {
                         <About />
                     </React.Suspense>
                 </section>
-                <HomeOut />
+                <React.Suspense fallback={<div>Chargement...</div>}>
+                    <HomeOut />
+                </React.Suspense>
             </>
         </>
     );

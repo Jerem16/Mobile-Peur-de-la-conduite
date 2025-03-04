@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react";
 
-const LazyClientLayout = lazy(() => import("./ClientLayout2"));
+const ClientLayout2 = lazy(() => import("./ClientLayout2"));
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <Suspense fallback={"Loading..."}>
-            <LazyClientLayout>{children}</LazyClientLayout>
+            <ClientLayout2>{children}</ClientLayout2>
         </Suspense>
     );
 };

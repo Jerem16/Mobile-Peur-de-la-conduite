@@ -17,4 +17,4 @@ const ContactHome: React.FC = () => {
     );
 };
 
-export default ContactHome;
+export default React.memo(ContactHome);

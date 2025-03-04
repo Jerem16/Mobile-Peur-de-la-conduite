@@ -598,3 +598,7 @@ p.p-info_ctn {
     transform-origin: bottom;
     transition: 0.5s ease-out 2.5s;
 }
+
+/* header {
+    display: none !important;
+} */

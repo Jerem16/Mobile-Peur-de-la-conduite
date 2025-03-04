@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeaderProps from "./headerProps";
+import HeaderLazy from "../src/components/header/HeaderLazy"
 import Footer from "../src/components/footer/footer"
 import ClientLayout from "./ClientLayout"; 
 
@@ -57,11 +57,6 @@ export const metadata: Metadata = {
             { url: "img/favicon/icons/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },  
             { url: "img/favicon/icons/android-chrome-512x512.png", sizes: "512x512", type: "image/png" }, 
             { url: "img/favicon/logo.svg", sizes: "48x48", type: "image/svg+xml" },  
-            { url: "img/favicon/logo.svg", sizes: "64x64", type: "image/svg+xml" }, 
-            { url: "img/favicon/logo.svg", sizes: "270x270", type: "image/svg+xml"  },  
-            { url: "img/favicon/logo.svg", sizes: "310x310", type: "image/svg+xml"  }, 
-            { url: "img/favicon/logo.svg", sizes: "152x152", type: "image/svg+xml"  },  
-            { url: "img/favicon/logo.svg", sizes: "180x180", type: "image/svg+xml" }, 
         ],        
     },
     alternates: {
@@ -81,17 +76,18 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>                
                 <link rel="preload" href="./styles.css" as="style" />
                 <link rel="stylesheet" href="./styles.css" fetchPriority="high"/>
+                <link rel="preload" href="./deferCss.css" as="style" />
                 <link
                     rel="stylesheet"
                     href="./deferCss.css"
-                    fetchPriority="low"
+                    fetchPriority="auto"
                 />
             </head>
             <body id="top">
                     <ClientLayout>
                         <header>
                             <div className="content-wrapper">
-                                <HeaderProps />
+                                <HeaderLazy />
                             </div>
                         </header>
                         <main>{children}</main>

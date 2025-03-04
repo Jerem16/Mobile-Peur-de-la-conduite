@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "next/link";
+import LogoLink from "./LogoLink";
 import { usePathname } from "next/navigation";
 import Nav from "./Nav";
-import Logo from "../svg_Icon/Logo";
 import { useScrollContext } from "../../utils/context/ScrollContext";
 import { useNavigation } from "../../utils/context/NavigationContext";
 import { MenuItem, menuItems } from "../../assets/data/menuItems";
@@ -34,19 +33,14 @@ const Header: React.FC<NavProps> = () => {
 
     return (
         <div className="header">
-            <Link
-                href="/#slider"
-                aria-label="Retour à la page d'accueil : Peur de la conduite"
-                className="logo-link"
+            <LogoLink
                 onClick={(e) => {
                     e.preventDefault();
                     closeHamburgerMenu(200);
                     handleNavigationClick("/#slider");
                     e.stopPropagation();
                 }}
-            >
-                <Logo />
-            </Link>
+            />
             <Nav
                 menuItems={updatedMenuItems}
                 onNavigationClick={handleNavigationClick}
@@ -55,4 +49,4 @@ const Header: React.FC<NavProps> = () => {
     );
 };
 
-export default Header;
+export default React.memo(Header);

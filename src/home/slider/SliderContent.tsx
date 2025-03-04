@@ -10,7 +10,7 @@ const SliderContent = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowSlider(true);
-        }, 2800);
+        }, 3200);
 
         return () => clearTimeout(timer);
     }, []);

@@ -62,4 +62,4 @@ const SubMenu: React.FC<SubMenuProps> = ({
     );
 };
 
-export default SubMenu;
+export default React.memo(SubMenu);

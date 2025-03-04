@@ -21,7 +21,6 @@
         U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 .slider .slide.next,
 .slider .slide.prev {
     display: block;
@@ -145,7 +144,6 @@ option {
     margin: 3.5rem 1.5rem 0 0;
     align-self: center;
 }
-
 @keyframes opacityAnim {
     0% {
         opacity: 0;
@@ -540,7 +538,6 @@ nav .group_link-submenu:focus-visible .submenu {
     position: relative;
     z-index: 1;
 }
-
 .services .segment .accompanist-bg {
     position: relative;
     top: -42px;
@@ -613,7 +610,6 @@ nav .group_link-submenu:focus-visible .submenu {
         visibility: hidden;
     }
 }
-
 form.srv-form input[type="checkbox"] {
     margin: 0 9px 0 25px;
 }
@@ -742,7 +738,6 @@ form.srv-form label {
     padding: 0;
     text-align: left;
 }
-
 .services.content-srv
     .segment
     .card_content

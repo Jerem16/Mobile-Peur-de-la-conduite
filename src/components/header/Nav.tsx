@@ -58,4 +58,4 @@ const Nav: React.FC<NavProps> = ({ menuItems, onNavigationClick }) => {
     );
 };
 
-export default Nav;
+export default React.memo(Nav);

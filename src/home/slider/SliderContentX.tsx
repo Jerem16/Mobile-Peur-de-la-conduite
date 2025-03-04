@@ -3,11 +3,12 @@ import React from "react";
 import { sliderContent } from "../../assets/data/content/slider";
 import dynamic from "next/dynamic";
 import { useSlider } from "../../utils/context/slider/SliderContext";
-import SlideItem from "./sliderItem/SlideItem";
 
 // Dynamique importation de l'arrow
 const SliderArrow = dynamic(() => import("./SliderArrow"), { ssr: false });
-
+const SlideItem = dynamic(() => import("./sliderItem/SlideItem"), {
+    ssr: false,
+});
 const SliderContentX = () => {
     const { nextSlide, prevSlide, getClass } = useSlider();
 
@@ -25,4 +26,4 @@ const SliderContentX = () => {
     );
 };
 
-export default SliderContentX;
+export default React.memo(SliderContentX);
