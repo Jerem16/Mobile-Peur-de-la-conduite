@@ -23,7 +23,7 @@ const SlideItem: React.FC<SlideItemProps> = ({
 }) => {
     return (
         <div className={className.trim() || undefined}>
-            <div className="slider-content intro-message">
+            <div className="slider-content">
                 <SldTitle
                     h2={h2}
                     h2bold={h2bold}

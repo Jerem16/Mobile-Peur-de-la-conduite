@@ -1,20 +1,12 @@
-"use client";
+import { lazy, Suspense } from "react";
 
-import dynamic from "next/dynamic";
-import { ScrollProvider } from "../src/utils/context/ScrollContext";
-
-const LazyScrollSectionsWrapper = dynamic(
-    () => import("./ScrollSectionsWrapper"),
-    {
-        loading: () => <div>Chargement des sections...</div>, // Fallback de chargement
-    }
-);
+const LazyClientLayout = lazy(() => import("./ClientLayout2"));
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <ScrollProvider>
-            <LazyScrollSectionsWrapper>{children}</LazyScrollSectionsWrapper>
-        </ScrollProvider>
+        <Suspense fallback={"Loading..."}>
+            <LazyClientLayout>{children}</LazyClientLayout>
+        </Suspense>
     );
 };
 

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { SliderProvider } from "../../../src/utils/context/slider/SliderContext";
-import SliderIntro from "./SliderContentIntro";
-const SliderLazy = lazy(() => import("./SliderContentX"));
 
+import SliderIntro from "./SliderContentIntro";
+
+const ClientSldProvider = lazy(() => import("./ClientSldProvider"));
 const SliderContent = () => {
     const [showSlider, setShowSlider] = useState(false);
 
@@ -21,9 +21,7 @@ const SliderContent = () => {
 
     return (
         <Suspense fallback={<SliderIntro />}>
-            <SliderProvider>
-                <SliderLazy />
-            </SliderProvider>
+            <ClientSldProvider />
         </Suspense>
     );
 };

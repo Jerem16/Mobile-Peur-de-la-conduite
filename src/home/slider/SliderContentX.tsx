@@ -2,14 +2,13 @@
 import React from "react";
 import { sliderContent } from "../../assets/data/content/slider";
 import dynamic from "next/dynamic";
-import { useSlider } from "../../utils/context/slider/SliderContext"; // Utilisation du hook personnalisé
+import { useSlider } from "../../utils/context/slider/SliderContext";
 import SlideItem from "./sliderItem/SlideItem";
 
 // Dynamique importation de l'arrow
 const SliderArrow = dynamic(() => import("./SliderArrow"), { ssr: false });
 
 const SliderContentX = () => {
-    // Utilisation du hook personnalisé pour accéder au contexte du slider
     const { nextSlide, prevSlide, getClass } = useSlider();
 
     return (

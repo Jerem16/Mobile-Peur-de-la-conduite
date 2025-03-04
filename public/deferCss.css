@@ -457,6 +457,26 @@ nav .group_link-submenu:focus-visible .submenu {
         );
     }
 }
+.btn-style_blue {
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    height: 44px;
+    background: #1a6de5;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+    will-change: transform, box-shadow;
+    min-width: 160px;
+}
+.btn-style_blue,
+.btn-style_blue a {
+    font-family: Nunito, serif;
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1rem;
+    text-align: center;
+}
 .btn-style_blue:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(26, 109, 229, 0.5);
@@ -466,6 +486,21 @@ nav .group_link-submenu:focus-visible .submenu {
 }
 .btn-style_blue:hover:after {
     opacity: 1;
+}
+.btn-style_blue:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 225ms, transform 0.45s;
+    background: linear-gradient(
+        145deg,
+        rgba(0, 158, 226, 0.5),
+        rgba(0, 0, 0, 0.2)
+    );
+    will-change: transform, opacity;
 }
 .boolean-checkbox input[type="checkbox"]:checked {
     background: 0 0;
@@ -707,26 +742,7 @@ form.srv-form label {
     padding: 0;
     text-align: left;
 }
-.btn-style_blue {
-    border-radius: 8px;
-    padding: 0.75rem 2rem;
-    height: 44px;
-    background: #1a6de5;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transform: scale(1);
-    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
-    will-change: transform, box-shadow;
-    min-width: 160px;
-}
-.btn-style_blue,
-.btn-style_blue a {
-    font-family: Nunito, serif;
-    color: #fff;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1rem;
-    text-align: center;
-}
+
 .services.content-srv
     .segment
     .card_content

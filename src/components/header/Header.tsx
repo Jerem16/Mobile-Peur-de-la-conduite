@@ -13,18 +13,11 @@ import { useInitialScroll } from "../../utils/scrollUtils";
 interface NavProps {
     menuItems: MenuItem[];
     onNavigationClick: (path: string) => void;
-    openButton: boolean;
-    openMainButton: boolean;
-    tabletMain: boolean;
-    bigMenu: boolean;
-    setBigMenu: React.Dispatch<React.SetStateAction<boolean>>;
-    setOpenMainButton: React.Dispatch<React.SetStateAction<boolean>>;
-    setTabletMain: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Header: React.FC<NavProps> = () => {
     const pathname = usePathname();
-    const { currentRoute, updateRoute } = useNavigation();
+    const { currentRoute, updateRoute, closeHamburgerMenu } = useNavigation();
     const { activeSection } = useScrollContext();
 
     useInitialScroll(pathname);
@@ -35,9 +28,6 @@ const Header: React.FC<NavProps> = () => {
 
     const updatedMenuItems = updateMenuClasses(
         menuItems.mainLink,
-        menuItems.reservation,
-        menuItems.search,
-        menuItems.connection,
         activeSection,
         currentRoute
     );
@@ -48,6 +38,12 @@ const Header: React.FC<NavProps> = () => {
                 href="/#slider"
                 aria-label="Retour à la page d'accueil : Peur de la conduite"
                 className="logo-link"
+                onClick={(e) => {
+                    e.preventDefault();
+                    closeHamburgerMenu(200);
+                    handleNavigationClick("/#slider");
+                    e.stopPropagation();
+                }}
             >
                 <Logo />
             </Link>
