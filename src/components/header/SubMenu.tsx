@@ -41,22 +41,23 @@ const SubMenu: React.FC<SubMenuProps> = ({
     return (
         <div className={`submenu ${isOpen ? "open" : ""}`}>
             <div className="submenu_group">
-                {menuItem.subItems.map((subItem) => {
-                    const fullPath = `${menuItem.path}${subItem.AnchorId}`;
-                    return (
-                        <a
-                            key={subItem.id}
-                            aria-label={`Section ${subItem.title}`}
-                            href={fullPath}
-                            className={`nav-link ${subItem.class}`}
-                            tabIndex={0}
-                            onClick={(e) => handleSubItemClick(fullPath, e)}
-                            onKeyDown={(e) => handleKeyDown(fullPath, e)}
-                        >
-                            {subItem.title}
-                        </a>
-                    );
-                })}
+                {isOpen &&
+                    menuItem.subItems.map((subItem) => {
+                        const fullPath = `${menuItem.path}${subItem.AnchorId}`;
+                        return (
+                            <a
+                                key={subItem.id}
+                                aria-label={`Section ${subItem.title}`}
+                                href={fullPath}
+                                className={`nav-link ${subItem.class}`}
+                                tabIndex={0}
+                                onClick={(e) => handleSubItemClick(fullPath, e)}
+                                onKeyDown={(e) => handleKeyDown(fullPath, e)}
+                            >
+                                {subItem.title}
+                            </a>
+                        );
+                    })}
             </div>
         </div>
     );

@@ -2,7 +2,6 @@
 import React from "react";
 import { NavigationProvider } from "../../utils/context/NavigationContext";
 import dynamic from "next/dynamic";
-// import Header from "./Header";
 const Header = dynamic(() => import("./Header"), {
     ssr: false,
 });
@@ -15,4 +14,4 @@ const HeaderWarpProvider = () => {
     );
 };
 
-export default React.memo(HeaderWarpProvider);
+export default dynamic(() => Promise.resolve(React.memo(HeaderWarpProvider)));

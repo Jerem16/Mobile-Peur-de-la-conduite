@@ -1,8 +1,6 @@
-import React from "react";
-import Image from "next/image";
 import { aboutContent } from "../../assets/data/content/about";
-import ButtonLink from "../../components/button/ButtonLink";
-import { menuItems } from "../../assets/data/menuItems";
+import AboutCard from "./AboutCard";
+
 const About = () => {
     return (
         <div className="about content-wrapper flx-c">
@@ -15,38 +13,11 @@ const About = () => {
                 />
             </div>
             {aboutContent.map((content, index) => (
-                <div className="segment" key={index + "ab-card"}>
-                    <div className="card_header flx-c">
-                        <h3>
-                            {content.cardIdentity.firstName}
-                            <span>{content.cardIdentity.name}</span>
-                        </h3>
-                        <Image
-                            className="ab-img_head"
-                            src="/img/about/avatar.webp"
-                            alt={`Avatar de ${content.cardIdentity.firstName}`}
-                            width={225}
-                            height={225}
-                            priority={false}
-                        />
-                        <p className="profession">
-                            {content.cardIdentity.profession}
-                        </p>
-                    </div>
-                    <div className="card_content">
-                        {content.cardContent.description.map((line, i) => (
-                            <p
-                                key={i + "ab"}
-                                dangerouslySetInnerHTML={{ __html: line }}
-                            />
-                        ))}
-                    </div>
-                    {menuItems.mainLink?.[4] && (
-                        <ButtonLink href={menuItems.mainLink[4].path}>
-                            Contactez-moi
-                        </ButtonLink>
-                    )}
-                </div>
+                <AboutCard
+                    key={index + "about"}
+                    cardIdentity={content.cardIdentity}
+                    cardContent={content.cardContent}
+                />
             ))}
         </div>
     );
