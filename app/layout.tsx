@@ -60,7 +60,10 @@ export const metadata: Metadata = {
         ],        
     },
     alternates: {
-        canonical: "https://jeremy.lemaignent.com/",
+        canonical: "https://m-peur-de-la-conduite.lemaignent.com/",
+        media: {
+            "only screen and (min-width: 640px)": "https://peur-de-la-conduite.lemaignent.com/",
+        },
     },
 };
 
@@ -72,7 +75,7 @@ export default function RootLayout({
     return (
         <html lang="fr-FR">
            <head>
-                <link rel="canonical" href="https://peur-de-la-conduite.fr/"/>
+                {/* <link rel="canonical" href="https://peur-de-la-conduite.fr/"/> */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>                
                 {/* <link rel="preload" href="./styles.css" as="style" />
