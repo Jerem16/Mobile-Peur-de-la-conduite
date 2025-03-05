@@ -72,7 +72,8 @@ export default function RootLayout({
     return (
         <html lang="fr-FR">
            <head>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="canonical" href="https://peur-de-la-conduite.fr/"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>                
                 {/* <link rel="preload" href="./styles.css" as="style" />
                 <link rel="stylesheet" href="./styles.css" fetchPriority="high"/> */}
