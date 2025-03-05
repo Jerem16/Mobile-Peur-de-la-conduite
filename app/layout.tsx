@@ -77,15 +77,17 @@ export default function RootLayout({
            <head>
                 {/* <link rel="canonical" href="https://peur-de-la-conduite.fr/"/> */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>                
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
+                            
                 {/* <link rel="preload" href="./styles.css" as="style" />
                 <link rel="stylesheet" href="./styles.css" fetchPriority="high"/> */}
-                <link rel="preload" href="./deferCss.css" as="style" />
+
+                {/* <link rel="preload" href="./deferCss.css" as="style" />
                 <link
                     rel="stylesheet"
                     href="./deferCss.css"
                     fetchPriority="low"
-                />
+                /> */}
             </head>
             <body id="top">
                     <ClientLayout>
