@@ -121,6 +121,7 @@ body {
 }
 .slider .slider-content .sld-card_title h2,
 h2,
+h1,
 p {
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -590,7 +591,7 @@ p.p-info_ctn {
 }
 
 /* ! DEFER CSS LOW ! */
-
+/* 
 @font-face {
     font-family: Nunito;
     font-style: normal;
@@ -1744,4 +1745,4 @@ form.srv-form label {
     font-size: 1rem;
     line-height: 1.25rem;
     color: var(--oranged, #f60);
-}
+} */
